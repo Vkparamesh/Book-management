@@ -5,11 +5,11 @@
 
 ## /user
 POST:create a new user
-GET:GEt all user 
+GET:GEt all user ✅
 
 
 ## /user/{id}
-GET: get user deatil by id
+GET: get user deatil by id ✅
 PUT: update user  by id
 DELET: Delete a user by id (check if he still has an issued book first) (is any fine need to pain)
 
