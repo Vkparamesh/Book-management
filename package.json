@@ -1,0 +1,25 @@
+{
+  "name": "my-version-book",
+  "version": "1.0.0",
+  "description": "book management ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vkparamesh/Book-management.git"
+  },
+  "author": "vk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vkparamesh/Book-management/issues"
+  },
+  "homepage": "https://github.com/Vkparamesh/Book-management#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
