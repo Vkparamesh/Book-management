@@ -1,7 +1,9 @@
-const { Router } = require('express');
 const express = require('express');
-const { books } = require("./data/books.json");
-const { users } = require("./data/users.json");
+
+
+const userRoute = require("./routes/users");
+const booksRoute = require("./routes/books");
+
 
 
 const app = express();
@@ -10,60 +12,17 @@ app.use(express.json());
 
 const port = 8081;
 
+
+
+
 app.get("/", (req, res) => {
     res.status(200).send({
         message: "hi"
     })
 })
 
-
-// Router:/users
-// method:get
-// description:Get all users
-// access:Public 
-// parameter : None  
-
-app.get('/users', (req, res) => {
-    res.status(200).json({
-        sucess: true,
-        data: users,
-    });
-})
-
-// Router:/users/id
-// method:get
-// description:Get particular person 
-// access:Public 
-// parameter : id  
-
-app.get("/users/:id", (req, res) => {
-    const { id } = req.params;
-    const user = users.find((each) => each.id === id);
-    if (!user) {
-        return res.status(404).json({
-            sucess: false,
-            message: "user not found"
-        })
-    }
-    return res.status(200).json({
-        sucess: true,
-        data: user
-    })
-})
-// Router:/users
-// method:post
-// description: create the new user   
-// access:Public 
-// parameter : none
-
-app.post("/users", (req, res) => {
-
-})
-
-
-
-
-
+app.use("/users", userRoute);
+app.use("/books", booksRoute);
 
 app.get("*", (req, res) => {
     res.status(404).json(

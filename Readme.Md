@@ -4,13 +4,13 @@
 
 
 ## /user
-POST:create a new user
+POST:create a new user✅
 GET:GEt all user ✅
 
 
 ## /user/{id}
 GET: get user deatil by id ✅
-PUT: update user  by id
+PUT: update user  by id✅
 DELET: Delete a user by id (check if he still has an issued book first) (is any fine need to pain)
 
 
@@ -23,10 +23,10 @@ GET:get the user subscription date
 
 ## /books
 POST:create the new book
-GET:get all the books
+GET:get all the books✅
 
 ## /books/{id}
-GET:get a book deatils by id
+GET:get a book deatils by id ✅
 PUT: Update a Books by id
 
 ## /books/issued
