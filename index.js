@@ -6,6 +6,8 @@ const DbConnection = require("./databaseConnection");
 const userRoute = require("./routes/users");
 const booksRoute = require("./routes/books");
 
+const { UserModel, BookModel } = require("./models/index")
+
 dotenv.config()
 
 

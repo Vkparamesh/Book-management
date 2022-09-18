@@ -1,5 +1,6 @@
-const { json } = require("express");
+
 const express = require("express");
+const { getAllBooks, getSingleBookbyid, getAllissuedBooks } = require("../controllers/book-controller");
 
 const { books } = require("../data/books.json");
 const { users } = require("../data/users.json");
@@ -7,58 +8,16 @@ const { users } = require("../data/users.json");
 const Router = express.Router()
 
 // get all books
-Router.get("/", (req, res) => {
-    res.status(200).json({
-        success: true,
-        data: books,
-    })
-})
+Router.get("/", getAllBooks)
 
 // get user by id
 
-Router.get("/:id", (req, res) => {
-    const { id } = req.params;
-    const book = books.find((each) => each.id === id)
-    if (!book) {
-        res.status(404).json({ message: "book not found" })
-    }
-    return res.status(200).json({
-        success: true,
-        data: book,
-    })
+Router.get("/:id", getSingleBookbyid)
 
-})
-
-Router.get("/issued/books", (req, res) => {
-    const userswithbooks = users.filter((each) => {
-        if (each.issuedBook) return each;
-    })
-    const issuedbooks = [];
-
-    userswithbooks.forEach((each) => {
-        const book = books.find((book) => book.id === each.issuedBook);
-        book.issuedBy = each.name;
-        book.issuedDate = each.issuedDate;
-        book.returnDate = each.returnDate;
-
-        issuedbooks.push(book);
-    })
-    if (issuedbooks.length === 0)
-        return res.status(404).json({
-            success: false,
-            message: "no  issued book found"
-        })
+Router.get("/issued/books", getAllissuedBooks)
 
 
-    return res.status(200).json({
-        success: true,
-        data: issuedbooks
-    })
-
-})
-
-
-// creating the new book 
+// creating the new book   
 Router.post('/', (req, res) => {
     const { data } = req.body;
 
