@@ -1,45 +1,45 @@
 # Book Record Management 
 
-# Routers and End points
+This project involved creating a full backend application for a book management system using Node.js and Express.js. We used mongodb and made api requests using Postman.
 
+# Documentation
 
-## /user
-POST:create a new user✅
-GET:GEt all user ✅
+https://documenter.getpostman.com/view/23340952/2s8YzMXQvh
 
+## Run Locally
 
-## /user/{id}
-GET: get user deatil by id ✅
-PUT: update user  by id✅
-DELET: Delete a user by id (check if he still has an issued book first) (is any fine need to pain)✅
+Clone the project
 
+```bash
+  git clone <repo Url>
+```
 
-## /user/subscription-details/{id}
+Go to the project directory
 
-GET:get the user subscription date✅
-1.date of subscription
-2.valid till
-3.fine if any
+```bash
+  cd my-project
+```
 
-## /books
-POST:create the new book✅
-GET:get all the books✅
+Install dependencies
 
-## /books/{id}
-GET:get a book deatils by id ✅
-PUT: Update a Books by id✅
+```bash
+  npm install
+```
 
-## /books/issued
-GET: Get all issued books✅
+Start the server
 
-## /books/issued/with-fine
-GET: get all the books fine
+```bash
+  npm run start
+```
 
+## Environment Variables
 
-# subscription types
-Basic (3 months)
-standard (6 months)
-premium(12 months)
+To run this project, you will need to add the following environment variables to your .env file Key from MovieDB
 
+`MONGO_URL`
+
+## Feedback
+
+If you have any feedback, please reach out to us at parameshvk3232@gmail.com
 
 
